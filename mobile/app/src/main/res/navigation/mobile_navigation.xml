@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_signin"
+        android:name="site.nohan.protoprogression.View.ui.home.SigninFragment"
+        android:label="@string/title_signin"
+        tools:layout="@layout/fragment_user_signin" >
+        <action
+            android:id="@+id/action_navigation_signin_to_navigation_signup"
+            app:destination="@id/navigation_signup" />
+        <action
+            android:id="@+id/action_navigation_signin_to_navigation_challenge"
+            app:destination="@id/navigation_challenge" />
+        <action
+            android:id="@+id/action_navigation_signin_to_navigation_user"
+            app:destination="@id/navigation_user" />
+        <action
+            android:id="@+id/action_navigation_signin_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="site.nohan.protoprogression.View.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_challenge"
+            app:destination="@id/navigation_challenge" />
+        <action
+            android:id="@+id/action_home_to_user"
+            app:destination="@id/navigation_user" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_subscribe"
+            app:destination="@id/navigation_subscribe" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_challenge"
+        android:name="site.nohan.protoprogression.View.ui.challenge.ChallengeFragment"
+        android:label="@string/title_challenge"
+        tools:layout="@layout/progression" >
+        <action
+            android:id="@+id/action_challenge_to_user"
+            app:destination="@id/navigation_user" />
+        <action
+            android:id="@+id/action_navigation_challenge_to_navigation_challenge_finished"
+            app:destination="@id/navigation_challenge_finished" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="site.nohan.protoprogression.View.ui.user.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user" />
+
+    <fragment
+        android:id="@+id/navigation_signup"
+        android:name="site.nohan.protoprogression.View.ui.home.SignupFragment"
+        android:label="@string/title_signup"
+        tools:layout="@layout/fragment_user_signup" />
+
+    <fragment
+        android:id="@+id/navigation_subscribe"
+        android:name="site.nohan.protoprogression.View.ui.home.SubscribeFragment"
+        android:label="Profil du Challenge"
+        tools:layout="@layout/fragment_subscribe" >
+        <action
+            android:id="@+id/action_subscribeFragment_to_navigation_challenge"
+            app:destination="@id/navigation_challenge" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_challenge_finished"
+        android:name="site.nohan.protoprogression.View.ArriveeFragment"
+        android:label="ArriveeFragment" />
+</navigation>
